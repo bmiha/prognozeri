@@ -267,6 +267,19 @@ const Leaderboard: React.FC = () => {
         </table>
       </div>
       <TopScorer leaderboard={leaderboard} />
+      <div className="bg-red-600 p-4 rounded-3xl">
+        <h2 className="uppercase font-bold opacity-60 mb-4">
+          Najčešća prognoza
+        </h2>
+        {mostPrognosed.result ? (
+          <>
+            <p className="text-2xl">{mostPrognosed.result}</p>
+            <p className="text-xs">Prognoziran {mostPrognosed.count} puta</p>
+          </>
+        ) : (
+          <p>No predictions available.</p>
+        )}
+      </div>
     </div>
   );
 };
