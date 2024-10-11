@@ -7,7 +7,7 @@ import { LiaPowerOffSolid } from "react-icons/lia";
 export const LogOutButton = () => {
   return (
     <Button
-      className="bg-slate-300 p-0 w-[40px] h-[40px] rounded-full shadow-none"
+      className="bg-slate-300 p-0 w-[40px] h-[40px] rounded-full shadow-none active:bg-slate-200"
       type="button"
       onClick={() => logOut()}
     >
