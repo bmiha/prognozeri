@@ -80,7 +80,7 @@ body {
 
 /* Leaderboard Table */
 .leaderboard th {
-  @apply text-xs font-normal pb-4;
+  @apply text-xs font-normal pt-2 pb-2;
 }
 
 .leaderboard tbody tr {
@@ -88,11 +88,15 @@ body {
 }
 
 .leaderboard tbody tr:nth-child(odd) {
-  @apply bg-slate-900;
+  @apply bg-slate-100;
 }
 
 .leaderboard tbody tr:first-child {
-  @apply h-20 text-2xl bg-amber-600 text-white;
+  @apply text-2xl bg-amber-600 text-white;
+}
+
+.leaderboard tbody tr:first-child td {
+  @apply pl-2 pr-3;
 }
 
 .leaderboard tbody tr td {

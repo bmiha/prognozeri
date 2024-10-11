@@ -8,7 +8,10 @@ export default async function Layout(props: Props) {
   await getUser();
   return (
     <div>
-      <LogOutButton />
+      <div className="flex justify-between items-center mb-4">
+        <h2>Prognozeri</h2>
+        <LogOutButton />
+      </div>
       {props.children}
     </div>
   );

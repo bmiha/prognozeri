@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, Fragment } from "react";
+import React, { useState, useEffect } from "react";
 import "./../../globals.css";
 import TopScorer from "./TopScorer";
 
@@ -239,31 +239,33 @@ const Leaderboard: React.FC = () => {
 
   return (
     <div>
-      <table className="w-full text-sm leaderboard mb-8">
-        <colgroup>
-          <col />
-          <col />
-        </colgroup>
-        <thead>
-          <tr>
-            <th className="text-left pl-9">Igrač</th>
-            <th className="text-right pr-4">Bodovi</th>
-          </tr>
-        </thead>
-        <tbody>
-          {leaderboard
-            .sort((a, b) => b.points - a.points)
-            .map((competitor, index) => (
-              <tr key={competitor.player}>
-                <td className="text-left">
-                  <span className="mr-2 opacity-40">{index + 1}.</span>
-                  <span>{competitor.player}</span>
-                </td>
-                <td className="text-right">{competitor.points}</td>
-              </tr>
-            ))}
-        </tbody>
-      </table>
+      <div className="p-2 bg-white rounded-3xl mb-4">
+        <table className="w-full text-sm leaderboard">
+          <colgroup>
+            <col />
+            <col />
+          </colgroup>
+          <thead>
+            <tr>
+              <th className="text-left pl-9">Igrač</th>
+              <th className="text-right pr-4">Bodovi</th>
+            </tr>
+          </thead>
+          <tbody>
+            {leaderboard
+              .sort((a, b) => b.points - a.points)
+              .map((competitor, index) => (
+                <tr key={competitor.player}>
+                  <td className="text-left">
+                    <span className="mr-2 opacity-40">{index + 1}.</span>
+                    <span>{competitor.player}</span>
+                  </td>
+                  <td className="text-right">{competitor.points}</td>
+                </tr>
+              ))}
+          </tbody>
+        </table>
+      </div>
       <TopScorer leaderboard={leaderboard} />
     </div>
   );
