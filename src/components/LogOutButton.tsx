@@ -6,7 +6,7 @@ import { Button } from "./ui/button";
 export const LogOutButton = () => {
   return (
     <Button type="button" onClick={() => logOut()}>
-      Log Out
+      Odjava
     </Button>
   );
 };

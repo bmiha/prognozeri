@@ -8,8 +8,8 @@ export default async function Layout(props: Props) {
   await getUser();
   return (
     <div>
-      Layout {props.children}
       <LogOutButton />
+      {props.children}
     </div>
   );
 }

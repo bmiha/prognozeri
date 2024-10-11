@@ -1,3 +1,9 @@
+import Leaderboard from "./Leaderboard";
+
 export default function Page() {
-  return <div>Home</div>;
+  return (
+    <div>
+      <Leaderboard />
+    </div>
+  );
 }
