@@ -267,13 +267,16 @@ const Leaderboard: React.FC = () => {
         </table>
       </div>
       <TopScorer leaderboard={leaderboard} />
-      <div className="bg-red-600 p-4 rounded-3xl">
-        <h2 className="uppercase font-bold opacity-60 mb-4">
+      <div className="relative bg-white p-4 rounded-3xl overflow-hidden">
+        <div className="angle-element"></div>
+        <h2 className="text-xl text-slate-400 uppercase font-black">
           Najčešća prognoza
         </h2>
         {mostPrognosed.result ? (
           <>
-            <p className="text-2xl">{mostPrognosed.result}</p>
+            <p className="text-3xl text-slate-800 uppercase font-black">
+              {mostPrognosed.result}
+            </p>
             <p className="text-xs">Prognoziran {mostPrognosed.count} puta</p>
           </>
         ) : (

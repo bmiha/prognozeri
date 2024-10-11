@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { LiaTrophySolid } from "react-icons/lia";
 
 // Define the type for leaderboard entries
 type LeaderboardEntry = {
@@ -28,8 +29,12 @@ const TopScorer: React.FC<TopScorerProps> = ({ leaderboard }) => {
   );
 
   return (
-    <div className="topscorer-wrapper rounded-3xl overflow-hidden">
+    <div className="relative topscorer-wrapper rounded-3xl overflow-hidden mb-4">
+      <div className="angle-element"></div>
       <div className="p-4 flex flex-col justify-end topscorer w-[230px]">
+        <div className="mb-4">
+          <LiaTrophySolid size={24} />
+        </div>
         <p className="text-xl text-slate-400 uppercase font-black">
           Najviše točnih prognoza
         </p>
