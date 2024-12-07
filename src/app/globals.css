@@ -2,9 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
+@import url("https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 @layer utilities {
   .text-balance {
@@ -67,60 +66,56 @@ body {
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
-}
 
-@layer base {
   * {
     @apply border-border;
   }
+
+  @font-face {
+    font-family: "Jaro";
+    src: url("fonts/Jaro-Regular-VariableFont_opsz.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+
   body {
-    @apply bg-slate-100 p-4;
+    @apply font-popins bg-blue-950 p-4;
+    background-image: url("./assets/abstract-background.png");
+    background-size: 100%;
+    background-position: top center;
+    background-repeat: no-repeat;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-jaro text-white;
+  }
+
+  p {
+    @apply text-[#E3F3F5];
   }
 }
 
 /* Leaderboard Table */
-.leaderboard th {
-  @apply text-xs font-normal pt-2 pb-2;
+.leaderboard-item {
+  @apply flex justify-between py-1 px-5 text-base leading-8;
 }
 
-.leaderboard tbody tr {
-  @apply h-10;
+.leaderboard-item:first-child {
+  @apply py-4 px-5 text-[22px] font-black rounded-2xl;
+  background: linear-gradient(90deg, #41d0ec 0%, #97fffa 100%);
 }
 
-.leaderboard tbody tr:nth-child(odd) {
-  @apply bg-slate-100;
-}
-
-.leaderboard tbody tr:first-child {
-  @apply text-2xl bg-amber-600 text-white;
-}
-
-.leaderboard tbody tr:first-child td {
-  @apply pl-2 pr-3;
-}
-
-.leaderboard tbody tr td {
-  @apply px-4;
+.leaderboard-item:first-child * {
+  @apply text-[#101339];
 }
 
 /* TopScorer Card */
-.topscorer-wrapper {
-  background-image: url("./assets/livaja_marko.png");
-  background-size: 120%;
-  background-position: -100% 20%;
-  background-repeat: no-repeat;
-  background-color: white;
-}
-
-.topscorer {
-  background-image: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 1) 40%,
-    rgba(255, 255, 255, 0) 100%
-  );
-}
-
-/* Card Styling */
-.angle-element {
-  @apply bg-slate-50 border-4 border-slate-100 absolute top-[-10px] right-[-28px] w-20 h-10 rotate-45;
+.clean-sheater {
+  @apply flex items-center justify-center h-[84px] w-[84px] text-3xl font-black text-[#101339] rounded-full;
+  background: linear-gradient(90deg, #41d0ec 0%, #97fffa 100%);
 }

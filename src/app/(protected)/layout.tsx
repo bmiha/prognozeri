@@ -7,9 +7,11 @@ type Props = PropsWithChildren<unknown>;
 export default async function Layout(props: Props) {
   await getUser();
   return (
-    <div>
+    <div className="w-[400px] ml-auto mr-auto">
       <div className="flex justify-between items-center mb-8 mt-4">
-        <h2 className="text-3xl font-black uppercase">Prognozeri</h2>
+        <h2 className="text-3xl uppercase text-white tracking-wide">
+          Prognozeri
+        </h2>
         <LogOutButton />
       </div>
       {props.children}

@@ -239,32 +239,18 @@ const Leaderboard: React.FC = () => {
 
   return (
     <div>
-      <div className="p-2 bg-white rounded-3xl mb-4">
-        <table className="w-full text-sm leaderboard">
-          <colgroup>
-            <col />
-            <col />
-          </colgroup>
-          <thead>
-            <tr>
-              <th className="text-left pl-9">Igrač</th>
-              <th className="text-right pr-4">Bodovi</th>
-            </tr>
-          </thead>
-          <tbody>
-            {leaderboard
-              .sort((a, b) => b.points - a.points)
-              .map((competitor, index) => (
-                <tr key={competitor.player}>
-                  <td className="text-left">
-                    <span className="mr-2 opacity-40">{index + 1}.</span>
-                    <span>{competitor.player}</span>
-                  </td>
-                  <td className="text-right">{competitor.points}</td>
-                </tr>
-              ))}
-          </tbody>
-        </table>
+      <div className="mb-10">
+        {leaderboard
+          .sort((a, b) => b.points - a.points)
+          .map((competitor, index) => (
+            <div className="leaderboard-item" key={competitor.player}>
+              <p className="flex gap-2 items-center">
+                <span>{index + 1}.</span>
+                {competitor.player}
+              </p>
+              <p>{competitor.points}</p>
+            </div>
+          ))}
       </div>
       <TopScorer leaderboard={leaderboard} />
       <div className="relative bg-white p-4 rounded-3xl overflow-hidden">

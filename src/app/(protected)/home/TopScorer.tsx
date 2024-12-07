@@ -29,19 +29,12 @@ const TopScorer: React.FC<TopScorerProps> = ({ leaderboard }) => {
   );
 
   return (
-    <div className="relative topscorer-wrapper rounded-3xl overflow-hidden mb-4">
-      <div className="angle-element"></div>
-      <div className="p-4 flex flex-col justify-end topscorer w-[230px]">
-        <div className="mb-4">
-          <LiaTrophySolid size={24} />
-        </div>
-        <p className="text-xl text-slate-400 uppercase font-black">
-          Najviše točnih prognoza
-        </p>
-        <p className="text-3xl text-slate-800 uppercase font-black">
-          {topPlayer.player} {topPlayer.threePointCount}
-        </p>
+    <div className="flex items-center justify-between px-5 pt-4 pb-5 mb-10 border-[3px] border-[#434e8e] rounded-2xl">
+      <div>
+        <h5 className="text-[#7881B2] text-base">Top Clean Sheater</h5>
+        <p className="text-[26px] font-black">{topPlayer.player}</p>
       </div>
+      <div className="clean-sheater">x{topPlayer.threePointCount}</div>
     </div>
   );
 };
